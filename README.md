@@ -1,6 +1,6 @@
 # OSCP-cheatsheet
 
-### PORT SCANNING
+### Port Scanning
 ```
 masscan -p1-65535,U:1-65535 10.10.10.x --rate=1000 -e tun0
 nmap -sV -A -p- -o nmap.txt 10.10.10.x
@@ -10,7 +10,7 @@ nikto -u http://10.10.10.x/
 ### Content Discovery
 ```
 dirbuster
-gobuster -e -u http://10.10.10.x/ -w /usr/share/wordlists/dirb/common.txt
+gobuster vhost -u http://10.11.1.8/ -w /usr/share/wordlists/dirb/common.txt
 ```
 
 ### Wordlists: 
@@ -18,13 +18,17 @@ gobuster -e -u http://10.10.10.x/ -w /usr/share/wordlists/dirb/common.txt
 https://github.com/danielmiessler/SecLists
 cewl -w wordlists.txt -d 10 -m 1 http://10.10.10.x/
 ```
+###SMB
+```
+Anonymous login:
+smbclient -N -L \\\\10.11.1.5\\
 
+smbmap
+smbmap -H 10.11.1.5 -p anonymous -u anonymous
 
-
-
-
-
-
+nmap smb vuln script
+nmap --script smb-vuln* -p 137,139,445 10.11.1.5
+```
 
 ### Shell upgrade to terminal
 ```

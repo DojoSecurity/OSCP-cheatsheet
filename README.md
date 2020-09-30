@@ -18,7 +18,7 @@ gobuster vhost -u http://10.11.1.8/ -w /usr/share/wordlists/dirb/common.txt
 https://github.com/danielmiessler/SecLists
 cewl -w wordlists.txt -d 10 -m 1 http://10.10.10.x/
 ```
-###SMB
+### SMB
 ```
 Anonymous login:
 smbclient -N -L \\\\10.11.1.5\\
@@ -39,3 +39,10 @@ fg
 export TERM=xterm-256color
 ```
    
+### Compiling exploits for Windows
+```
+i686-w64-mingw32-gcc exploit.c -o exploit
+
+For 32bit
+i686-w64-mingw32-gcc 40564.c -o 40564 -lws2_32
+```

@@ -42,7 +42,9 @@ export TERM=xterm-256color
 ### Compiling exploits for Windows
 ```
 i686-w64-mingw32-gcc exploit.c -o exploit
+gcc exploit.c -o exploit 
 
 For 32bit
 i686-w64-mingw32-gcc 40564.c -o 40564 -lws2_32
+gcc 9542.c -m32  -Wl,--hash-style=both -o exploit (static exploit)
 ```

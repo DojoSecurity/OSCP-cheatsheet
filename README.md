@@ -29,6 +29,13 @@ smbmap -H 10.11.1.5 -p anonymous -u anonymous
 nmap smb vuln script
 nmap --script smb-vuln* -p 137,139,445 10.11.1.5
 ```
+### LDAP
+```
+ldapsearch -x -h 10.10.10.x -p 389 -s base namingcontexts
+ldapsearch -x -h 10.10.10.x -p 389 -b "DC=svcorp-BANK,DC=com"
+nmap -p 389 --script ldap-search 10.10.10.x
+```
+
 
 ### Shell upgrade to terminal
 ```

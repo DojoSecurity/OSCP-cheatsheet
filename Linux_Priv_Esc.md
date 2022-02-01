@@ -23,9 +23,10 @@ uname -a
 cat /etc/issue
 ```
 
-### Check for your sudo privileges
+### Check for your sudo privileges and the groups you belong to
 ```
 sudo -l
+id
 ```
 ### Check if your sudo version is vulnerable
 ```

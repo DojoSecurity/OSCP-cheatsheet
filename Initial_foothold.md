@@ -32,7 +32,7 @@ nikto -u http://10.10.10.10/
 
 ### Content Discovery
 ```
-ffuf -c -w ./directory-list-2.3-big.txt -u https://10.10.10.10/FUZZ -e txt,php,jsp,old,bak
+ffuf -c -w ./directory-list-2.3-big.txt -u https://10.10.10.10/FUZZ -e .txt,.php,.jsp,.old,.bak
 gobuster vhost -u http://10.10.10.10/ -w /usr/share/wordlists/dirb/common.txt
 ```
 
